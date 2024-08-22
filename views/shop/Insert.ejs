@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+</head>
+<body>
+  <%-include('../inc/Top.ejs') %>
+  <hr>
+  <div class="container">
+    <h2>새 상품 추가</h2>
+    <form action="/shop/insert" method="post">
+      <table class="table">
+        <tr>
+          <th>아이디</th>
+          <td><%=id%></td>
+        </tr>
+        <tr>
+          <th>이름</th>
+          <td><input type="text" name="name" required></td>
+        </tr>
+        <tr>
+          <th>가격</th>
+          <td><input type="text" name="price" required></td>
+        </tr>
+        <tr>
+          <th>연식</th>
+          <td><input type="text" name="year" required></td>
+        </tr>
+        <tr>
+          <th>회사</th>
+          <td><input type="text" name="company" required></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="저장">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <%-include('./ShopNav.ejs') %>
+  </div>
+</body>
+</html>

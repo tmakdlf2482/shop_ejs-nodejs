@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+</head>
+<body>
+  <%-include('../inc/Top.ejs') %>
+  <hr>
+  <div class="container">
+    <h2>상품 상세 보기</h2>
+    <form action="/shop/cart" method="post">
+      <input type="hidden" name="_id" value="<%=car._id %>">
+      <table class="table">
+        <tr>
+          <th>아이디</th>
+          <td><%=car._id %></td>
+        </tr>
+        <tr>
+          <th>이름</th>
+          <td><%=car.name %></td>
+        </tr>
+        <tr>
+          <th>가격</th>
+          <td><%=car.price %></td>
+        </tr>
+        <tr>
+          <th>연식</th>
+          <td><%=car.year %></td>
+        </tr>
+        <tr>
+          <th>회사</th>
+          <td><%=car.company %></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" value="장바구니 추가">
+          </td>
+        </tr>
+      </table>
+    </form>
+    <a href="/shop/modify?_id=<%=car._id%>">수정</a> |
+    <a href="/shop/delete?_id=<%=car._id%>">삭제</a>
+    <%-include('./ShopNav.ejs') %>
+  </div>
+</body>
+</html>
